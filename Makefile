@@ -45,7 +45,7 @@ mac: ui
 	GOOS=darwin GOARCH=arm64 go build -ldflags="-X main.commit=${GIT_HASH} -X main.version=local_${GIT_HASH} -X main.date=${BUILD_DATE}" -o $(BUILD_DIR)/$(APP_NAME)-darwin-arm64
 
 # Build Linux binary
-linux: linux-arm64 linux-amd64
+linux: linux-arm64 linux-amd64 linux-riscv
 
 linux-amd64: ui
 	@echo "Building Linux AMD64 binary..."
@@ -54,6 +54,10 @@ linux-amd64: ui
 linux-arm64: ui
 	@echo "Building Linux ARM64 binary..."
 	GOOS=linux GOARCH=arm64 go build -ldflags="-X main.commit=${GIT_HASH} -X main.version=local_${GIT_HASH} -X main.date=${BUILD_DATE}" -o $(BUILD_DIR)/$(APP_NAME)-linux-arm64
+
+linux-riscv: ui
+	@echo "Building Linux RISCV binary..."
+	GOOS=linux GOARCH=riscv64 go build -ldflags="-X main.commit=${GIT_HASH} -X main.version=local_${GIT_HASH} -X main.date=${BUILD_DATE}" -o $(BUILD_DIR)/$(APP_NAME)-linux-riscv
 
 # Build Windows binary
 windows: ui
