@@ -11,11 +11,18 @@ builds:
     goarch:
       - amd64
       - arm64
+      - riscv64
     ignore:
       - goos: freebsd
         goarch: arm64
+      - goos: freebsd
+        goarch: riscv64
       - goos: windows
         goarch: arm64
+      - goos: windows
+        goarch: riscv64
+      - goos: darwin
+        goarch: riscv64
 
 archives:
   - id: default

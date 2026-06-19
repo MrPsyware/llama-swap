@@ -56,8 +56,8 @@ linux-arm64: ui
 	GOOS=linux GOARCH=arm64 go build -ldflags="-X main.commit=${GIT_HASH} -X main.version=local_${GIT_HASH} -X main.date=${BUILD_DATE}" -o $(BUILD_DIR)/$(APP_NAME)-linux-arm64
 
 linux-riscv: ui
-	@echo "Building Linux RISCV binary..."
-	GOOS=linux GOARCH=riscv64 go build -ldflags="-X main.commit=${GIT_HASH} -X main.version=local_${GIT_HASH} -X main.date=${BUILD_DATE}" -o $(BUILD_DIR)/$(APP_NAME)-linux-riscv
+	@echo "Building Linux RISCV64 binary..."
+	GOOS=linux GOARCH=riscv64 go build -ldflags="-X main.commit=${GIT_HASH} -X main.version=local_${GIT_HASH} -X main.date=${BUILD_DATE}" -o $(BUILD_DIR)/$(APP_NAME)-linux-riscv64
 
 # Build Windows binary
 windows: ui
