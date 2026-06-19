@@ -200,6 +200,7 @@ func (s *Server) routes() {
 		CreateRequestContextMiddleware(s.cfg),
 		CreateFilterMiddleware(s.cfg),
 		CreateFormFilterMiddleware(s.cfg),
+		CreateGlobalConcurrencyMiddleware(s.cfg.ConcurrencyLimit),
 		CreateInflightMiddleware(s.inflight),
 		CreateMetricsMiddleware(s.metrics, s.cfg),
 	)

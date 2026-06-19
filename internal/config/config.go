@@ -163,6 +163,9 @@ type Config struct {
 
 	// support remote peers, see issue #433, #296
 	Peers PeerDictionaryConfig `yaml:"peers"`
+
+	// global request concurrency limit across all models; 0 = unlimited
+	ConcurrencyLimit int `yaml:"concurrencyLimit"`
 }
 
 // RoutingConfig is the canonical, normalized routing/scheduling configuration.
